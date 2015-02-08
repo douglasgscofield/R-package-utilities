@@ -15,7 +15,7 @@ sophisticated with package contents, its utility will expand.
 Tools and packages required:
 
 * R (via the command line), pandoc (same)
-* `devtools`, `rmarkdown`, `knitr`
+* R packages `devtools`, `rmarkdown`, `knitr` (>= 0.5 for vignettes via R markdown)
 
 As for the package environment, it requires a preliminary version to be set
 up, with a DESCRIPTION file in place containing Package: and Version: lines.
@@ -44,4 +44,3 @@ Targets **build**, **check** and **check-cran** use a few other utility targets.
 Thanks to [Karl Broman](http://kbroman.org/pkg_primer/pages/docs.html)
 for the should-have-been-obvious idea to use a Makefile.
 
-``
