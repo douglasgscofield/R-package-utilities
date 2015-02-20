@@ -44,3 +44,23 @@ Targets **build**, **check** and **check-cran** use a few other utility targets.
 Thanks to [Karl Broman](http://kbroman.org/pkg_primer/pages/docs.html)
 for the should-have-been-obvious idea to use a Makefile.
 
+Makefile.R-code-data-into-RData-hardcoded
+-----------------------------------------
+
+Identical to the above, but with a couple of package-specific hard-coded rules
+for building `data/*.RData` files from files in `inst/extdata/*.txt`, from my
+package `readGenalex`.  Nonstandard data formats should be kept in
+`inst/extdata/`, and input for `readGenalex` falls under this category.  The
+`data` rule creates separate `.RData` files in `data/` for each file.
+
+I would like to generalise these rules.
+
+For data in this category, I have adopted some rules of practice.  First, the
+data is kept in a file named after the object holding the data when loaded into
+R with the `data()` command, with appropriate extention.  Second, the data is
+loaded into that named object and then saved as the only object within an
+`.RData` file named after the object.  Thus for a data set providing an object
+named `foo`, the file `inst/extdata/foo.txt` contains the data that will be
+found within `foo` and the file `data/foo.RData` contains `foo` once the data
+has been loaded into it.  Each `.RData` provides a single object, and each
+object/`.RData` combination gets its own documentation.
