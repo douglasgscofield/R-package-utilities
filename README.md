@@ -57,7 +57,7 @@ I would like to generalise these rules.
 
 For data in this category, I have adopted some rules of practice.  First, the
 data is kept in a file named after the object holding the data when loaded into
-R with the `data()` command, with appropriate extention.  Second, the data is
+R with the `data()` command, with appropriate extension.  Second, the data is
 loaded into that named object and then saved as the only object within an
 `.RData` file named after the object.  Thus for a data set providing an object
 named `foo`, the file `inst/extdata/foo.txt` contains the data that will be
