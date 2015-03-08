@@ -77,7 +77,11 @@ data: data/xyz.RData data/xyz.RData
 
 # another, from dispersalDiversity
 data/%.RData: inst/extdata/%.txt
-	R --quiet -e "$* <- as.matrix(read.delim('$^')); save($*, file = '$@')"
+	R --quiet -e "$* <- as.matrix(read.delim('$^')); x <- dimnames($*); names(x) <- c('Granary_Year', 'Source'); dimnames($*) <- x; save($*, file = '$@')"
+
+# A more simple matrix load
+#data/%.RData: inst/extdata/%.txt
+#	R --quiet -e "$* <- as.matrix(read.delim('$^')); save($*, file = '$@')"
 
 doc:
 	R --quiet -e 'devtools::document()'

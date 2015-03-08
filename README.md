@@ -53,7 +53,7 @@ Makefile.R-code-data-into-RData-hardcoded
 
 Includes an additional couple of rules.
 
-**make data** makes an `data/xyz.RData` file from a `read.delim`-able (or whatever rule) file in `inst/extdata/xyz.txt`.  The `save`'d variable is named `xyz`.
+**make data** makes an `data/xyz.RData` file from a `read.delim`-able (or whatever rule) file in `inst/extdata/xyz.txt`.  The `save`'d variable is named `xyz`.  The uncommented rule adds names to the dimensions.
 
 Data should be kept in `inst/extdata/`.  The `data` rule creates separate
 `.RData` files in `data/` for each file.
