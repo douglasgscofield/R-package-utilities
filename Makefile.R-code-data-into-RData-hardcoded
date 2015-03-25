@@ -99,7 +99,7 @@ $(CHECKDIR): $(TARBALL_LOC)
 $(TARBALL_LOC): NEWS doc vignettes R/*.R man/*.Rd data/* inst/*
 	cd $(PARENTDIR) && RSTUDIO_PANDOC=`which pandoc` R CMD build $(PACKAGE)
 
-build: $(TARBALL_LOC)
+build: data doc NEWS $(TARBALL_LOC)
 
 check: $(CHECKDIR)
 	cd $(CHECKDIR) && R CMD check $(TARBALL)

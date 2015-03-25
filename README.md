@@ -1,6 +1,8 @@
 R-package-utilities
 ===================
 
+**Need to include C code stubs, including registering routines**.
+
 
 
 Makefile.R-code-only

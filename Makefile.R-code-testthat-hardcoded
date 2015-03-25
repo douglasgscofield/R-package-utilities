@@ -83,9 +83,9 @@ $(TARBALL_LOC): NEWS doc vignettes R/*.R man/*.Rd data/* inst/*
 	cd $(PARENTDIR) && RSTUDIO_PANDOC=`which pandoc` R CMD build $(PACKAGE)
 
 # would be nice to generalise this using $(PACKAGE), and auto-install testthat
-testthat:
+testthat: doc
 	if test -f tests/testthat.R ; then \
-		R --quiet -e 'devtools::install("."); library(testthat); setwd("tests"); test_check("readGenalex")' ; \
+		R --quiet -e "devtools::install('.'); library(testthat); setwd('tests'); test_check('$(PACKAGE)')" ; \
 	fi
 
 build: testthat $(TARBALL_LOC)
